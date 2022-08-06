@@ -1,7 +1,13 @@
-# Vue 3 + Vite
+# Адаптивная вёрстка сайта
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Большие экраны (от 1200px):
 
-## Recommended IDE Setup
+![alt text](/src/pictures/big_screen.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+Средние экраны (от 767px до 1200px):
+
+![alt text](/src/pictures/tablet_screen.png)
+
+Маленькие экраны, мобильные (от 767px до 1200px):
+
+![alt text](/src/pictures/small_screen.png)
