@@ -81,7 +81,7 @@ getDescription();
       </footer>
     </section>
 
-    <section class="col">
+    <section class="col pictures">
       <section class="pictures-container">
         <div class="flag">
           <span class="big-img" />

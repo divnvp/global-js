@@ -1,6 +1,9 @@
 <script setup>
 //
 import UINavigation from "./UINavigation.vue";
+import UIDropdownNav from "./UIDropdownNav.vue";
+
+const items = ["Mobile Top Up", "About", "Rate", "Help"];
 </script>
 
 <template>
@@ -12,6 +15,8 @@ import UINavigation from "./UINavigation.vue";
 
     <nav>
       <UINavigation />
+
+      <UIDropdownNav :items="items" />
     </nav>
 
     <button class="button_sign-up">
