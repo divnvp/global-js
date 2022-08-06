@@ -1,10 +1,12 @@
 <script setup>
 import { ref, watch } from "vue";
+import { fetchDescription } from "../network/description.js";
 // Components
 import UIFooter from "./UIFooter.vue";
 
 const isWarningVisible = ref(false);
 const inputValue = ref("");
+const description = ref("");
 
 const preventSymbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 
@@ -17,6 +19,18 @@ const nameValidation = event => {
     event.preventDefault();
   }
 }
+
+const getDescription = async () => {
+  try {
+    let answer = await fetchDescription();
+
+    description.value = JSON.parse(answer)[0];
+  } catch (e) {
+    alert(e);
+  }
+}
+
+getDescription();
 </script>
 
 <template>
@@ -33,9 +47,7 @@ const nameValidation = event => {
       <span class="title_bold_wider">With Bank Transfer</span>
 
       <span class="description">
-        We Make international calling simple,
-        relible, and cheap basedon your unique
-        calling behavior.
+        {{ description }}
       </span>
 
       <button class="button_get-started">

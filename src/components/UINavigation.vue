@@ -4,7 +4,14 @@
 
 <template>
   <section class="navigation">
-    <span>Mobile Top Up</span>
+    <div class="navigation__selected">
+      <span>
+        Mobile Top Up
+      </span>
+
+      <hr />
+    </div>
+
     <span>About</span>
     <span>Rate</span>
     <span>Help</span>
