@@ -1,6 +1,22 @@
 <script setup>
-//
+import { ref, watch } from "vue";
+// Components
 import UIFooter from "./UIFooter.vue";
+
+const isWarningVisible = ref(false);
+const inputValue = ref("");
+
+const preventSymbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+
+watch(inputValue, (newValue) => {
+  isWarningVisible.value = newValue && newValue.length <= 4 || newValue.length >= 12;
+});
+
+const nameValidation = event => {
+  if (preventSymbols.some(s => event.key.includes(s))) {
+    event.preventDefault();
+  }
+}
 </script>
 
 <template>
@@ -27,7 +43,14 @@ import UIFooter from "./UIFooter.vue";
       </button>
 
       <section class="searching">
-        <input placeholder="Where do you want to call?">
+        <input
+          v-model="inputValue"
+          placeholder="Where do you want to call?"
+          type="text"
+          minlength="4"
+          maxlength="12"
+          @keydown="nameValidation($event)"
+        >
 
         <button>
           <img
@@ -35,6 +58,10 @@ import UIFooter from "./UIFooter.vue";
             alt="Search icon"
           >
         </button>
+      </section>
+
+      <section v-if="isWarningVisible" class="row warning">
+        <span>Minimum length of calling is 4 and maximum is 12 symbols</span>
       </section>
 
       <footer class="row">
