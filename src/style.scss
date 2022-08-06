@@ -56,6 +56,11 @@ button {
   cursor: pointer;
 }
 
+hr {
+  border: 0;
+  padding: 0;
+}
+
 #app {
   font-family: "Poppins", serif;
 }
@@ -76,6 +81,10 @@ button {
 
 .align-items__center {
   align-items: center;
+}
+
+.warning {
+  color: tomato;
 }
 
 @media screen and (min-width: 900px){
@@ -100,6 +109,22 @@ button {
         color: #4A4A4A;
 
         cursor: pointer;
+      }
+
+      &__selected {
+        display: flex;
+        flex-direction: column;
+
+        hr {
+          display: flex;
+          align-items: flex-start;
+
+          width: 21px;
+          height: 0;
+
+          border: 1.5px solid #FB9B69;
+          background-color: #FB9B69;
+        }
       }
     }
   }
@@ -239,7 +264,7 @@ button {
 
       animation-name: rotation;
       animation-duration: 6s;
-      animation-delay: 3s;
+      animation-delay: calc(3s * 5);
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
@@ -261,15 +286,13 @@ button {
       border-radius: 100%;
       border: 10px solid #FFFFFF;
       filter: drop-shadow(0px 10px 30px rgba(148, 148, 148, 0.1));
-
-      animation-name: center-to-circle;
-      animation-duration: 3s;
-      animation-delay: 0.4s;
+      opacity: 0;
     }
 
     @keyframes center-to-circle {
       from {
         visibility: hidden;
+        opacity: 0;
 
         display: flex;
         flex-direction: row;
@@ -282,6 +305,7 @@ button {
 
       to {
         visibility: visible;
+        opacity: 1;
       }
     }
 
@@ -300,6 +324,10 @@ button {
 
       width: 30px;
       height: 30px;
+
+      animation-name: center-to-circle;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
     }
 
     .two {
@@ -308,6 +336,11 @@ button {
 
       width: 60px;
       height: 60px;
+
+      animation-name: center-to-circle;
+      animation-duration: 3s;
+      animation-delay: calc(3s + 0.4s);
+      animation-fill-mode: forwards;
     }
 
     .three {
@@ -316,6 +349,11 @@ button {
 
       width: 40px;
       height: 40px;
+
+      animation-name: center-to-circle;
+      animation-duration: 3s;
+      animation-delay: calc(6s + 0.4s);
+      animation-fill-mode: forwards;
     }
 
     .four {
@@ -324,6 +362,11 @@ button {
 
       width: 50px;
       height: 50px;
+
+      animation-name: center-to-circle;
+      animation-duration: 3s;
+      animation-delay: calc(9s + 0.4s);
+      animation-fill-mode: forwards;
     }
 
     .five {
@@ -332,6 +375,16 @@ button {
 
       width: 30px;
       height: 30px;
+
+      animation-name: center-to-circle;
+      animation-duration: 3s;
+      animation-delay: calc(12s + 0.4s);
+      animation-fill-mode: forwards;
+    }
+
+    .warning {
+      font-size: 12px;
+      margin-bottom: -19px;
     }
   }
 
