@@ -53,13 +53,6 @@ import UIFooter from "./UIFooter.vue";
           <img src="../pictures/indian.png" class="sm-img four" alt="Indian flag">
           <img src="../pictures/indian.png" class="sm-img five" alt="Indian flag">
         </div>
-<!--        <section class="flag">-->
-<!--          <img-->
-<!--            src="../pictures/indian.png"-->
-<!--            alt="Indian flag"-->
-<!--            class="flag_5"-->
-<!--          >-->
-<!--        </section>-->
 
         <img
           src="../pictures/girl.png"
@@ -68,7 +61,6 @@ import UIFooter from "./UIFooter.vue";
         >
 
         <span class="green-ellipse" />
-<!--        <span class="gray-ellipse" />-->
       </section>
     </section>
   </section>
